@@ -58,32 +58,33 @@ a = 0 ? console.log("Вірно") : console.log("Невірно");
 a = 1 ? console.log("Вірно") : console.log("Невірно");
 a = -3 ? console.log("Вірно") : console.log("Невірно");
 // - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день.
+
 // let anyday = +prompt("Ведіть будь ласка день тижня")
-switch (anyday) {
-    case 1 :
-        console.log("Я весь день працюю на новій пошті");
-        break;
-    case 2 :
-        console.log("Я працюю до обіду на новій пошті, а потім вчуся");
-        break;
-    case 3 :
-        console.log("У цей день займаюсь йогою");
-        break;
-    case 4 :
-        console.log("Я працюю охоронцем в бібліотеці");
-        break;
-    case 5 :
-        console.log("Працюю на новій пошті до обіду, потім я вчуся");;
-        break;
-    case 6 :
-        console.log("Не забувай поприбирати!!!");
-        break;
-    case 7 :
-        console.log("Потрібно присвятити день навчаню, але вечером пиво і кіно");
-        break;
-    default :
-        console.log("якась нісенітниця");
-};
+// switch (anyday) {
+//     case 1 :
+//         console.log("Я весь день працюю на новій пошті");
+//         break;
+//     case 2 :
+//         console.log("Я працюю до обіду на новій пошті, а потім вчуся");
+//         break;
+//     case 3 :
+//         console.log("У цей день займаюсь йогою");
+//         break;
+//     case 4 :
+//         console.log("Я працюю охоронцем в бібліотеці");
+//         break;
+//     case 5 :
+//         console.log("Працюю на новій пошті до обіду, потім я вчуся");;
+//         break;
+//     case 6 :
+//         console.log("Не забувай поприбирати!!!");
+//         break;
+//     case 7 :
+//         console.log("Потрібно присвятити день навчаню, але вечером пиво і кіно");
+//         break;
+//     default :
+//         console.log("якась нісенітниця");
+// };
 
 // - Потрібно визначити Високосний рік чи ні. Високосні роки діляться націло на 4.
 //
@@ -98,11 +99,11 @@ switch (anyday) {
 // Якщо користувач вводить «ECMAScript», то показати: «Правильно!», інакше – відобразити: «Не знаєте? ECMAScript!
 
 // let js = prompt("Яка офіційна назва JavaScript?");
-if (js === "ECMAScript") {
-    console.log("Правильно!");
-} else {
-    console.log("не знаєте? ECMAScript!");
-}
+// if (js === "ECMAScript") {
+//     console.log("Правильно!");
+// } else {
+//     console.log("не знаєте? ECMAScript!");
+// }
 
 
 // js = (js === "ECMAScript") ?  console.log("Правильно!") : console.log("Не знаєте? ECMAScript");
