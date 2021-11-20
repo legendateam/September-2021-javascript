@@ -2,7 +2,11 @@
     let arr = [];
 //     a. заповнити його 50 парними числами за допомоги циклу.
     for(let i = 0; i < 50; i++) {
-
+        if (i % 2 === 0) {
+            for( let i = 1; i < 51 ; i ++) {
+                console.log(arr[i]);
+            }
+        }
     }
 
 console.log(arr);
