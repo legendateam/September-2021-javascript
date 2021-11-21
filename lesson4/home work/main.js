@@ -60,7 +60,6 @@ primitiveelements(["dfdsf", true, false, 333,0,"yes","no",29,true])
 function linkelement(arr) {
     for (element of arr) {
         document.write(`<div>${element.id} ${element.name} ${element.age}</div>`)
-
     }
 }
 let anyarr = [
