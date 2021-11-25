@@ -23,16 +23,24 @@ maxnumber(40,2,100500)
 
 // - створити функцію яка повертає найбільше число з масиву
 let arr = [439,55,1,4,5474,4,8,6,6735,8335,566,4,544,874,37,25,85,544,85,9];
-function maxnumofarr(arr) {
-    for (let i= 0 ; i < arr.length; i++) {
 
-    }
+function maxnum(arr) {
+        let max = Math.max(...arr);
+        return max;
 }
 
-maxnumofarr(arr);
+let maxnumofarr = maxnum(arr);
+console.log(maxnumofarr);
 
 // - створити функцію яка повертає найменьше число з масиву
 
+function minnum(arr) {
+    let min = Math.min(...arr);
+    return min;
+}
+
+let minnumofarr = minnum(arr);
+console.log(minnumofarr);
 
 // - створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад [1,2,10]->13
 
@@ -48,11 +56,40 @@ maxnumofarr(arr);
 
 // - створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.
 
-console.log(arr);
+let numberarr = [5, 32, 876, 9, 0, 666, 75, 2, 4, 86, 53, 1];
+
+function seredne(arr) {
+    let ser = 0;
+    let result = 0;
+    for (let num of arr) {
+        ser += num;
+        result = ser / arr.length
+    }
+    return result;
+}
+
+let serdearr = seredne(numberarr);
+console.log(serdearr);
 
 // - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено);
 
+function anynum(arr) {
+    let min = arr[0];
+    let max = arr[0];
+    for (const num of arr) {
+        if (num > max) {
+            max = num;
+        }
+        if (num < min) {
+            min = num;
+        }
+    }
 
+    console.log(max);
+    return min;
+}
+let asd = anynum([20,4,332,7,100500,500,654,254])
+console.log(asd);
 
 // - створити функцію яка заповнює масив рандомними числами
 function randomnum(arr,max) {
