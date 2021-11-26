@@ -60,12 +60,10 @@ let numberarr = [5, 32, 876, 9, 0, 666, 75, 2, 4, 86, 53, 1];
 
 function seredne(arr) {
     let ser = 0;
-    let result = 0;
     for (let num of arr) {
         ser += num;
-        result = ser / arr.length
     }
-    return result;
+    return ser / arr.length ;
 }
 
 let serdearr = seredne(numberarr);
