@@ -238,6 +238,7 @@ cardBob2.takeCredits(50);
 console.log(cardBob1.getCardOptions());
 console.log(cardBob2.getCardOptions());
 
+// в прикладі чомусь показано 298.5, але якщо взяти 0.05% від 300 то буде 15, а не 1.5
 
 
 
