@@ -54,7 +54,6 @@ let simpsons = [
 // - взяти попередній масив з сімпсонами.
 //     Проітерувати його, створиши для кожного елементу масиву <div class='member'>. Для кожної властивості елементу створити окремий блок, та помістити його у div.member
 //
-
 // for (const simpson of simpsons) {
 //     let imgElement = document.createElement("img");
 //     imgElement.src = simpson.photo;
