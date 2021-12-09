@@ -4,13 +4,11 @@
 let h1Element = document.createElement("h1");
 let button = document.createElement("button");
 button.innerText = "click";
-h1Element.id = "text";
 h1Element.innerText = "home work";
 document.body.append(h1Element, button);
 
-
+//
 button.onclick = () => h1Element.style.display === "none" ? h1Element.style.display = "block" : h1Element.style.display = "none" ;
-
 
 //- Создайте кнопку, при клике на которую, она будет скрывать сама себя.
 
@@ -90,25 +88,43 @@ formAge.age.onkeypress = () => {
 
 let formForLastTask = document.createElement("form");
 let inputForLastTask = document.createElement("input");
-let btnFormLastTask = document.createElement("button");
+// let btnFormLastTask = document.createElement("button");
 let ulLastTask = document.createElement("ul");
 
-btnFormLastTask.innerText = "hide";
+// btnFormLastTask.innerText = "hide";
 inputForLastTask.setAttribute("name", "comment");
 formForLastTask.setAttribute("action", "/comments");
 formForLastTask.setAttribute("id", "comments");
 
-formForLastTask.append(inputForLastTask,btnFormLastTask);
+formForLastTask.appendChild(inputForLastTask);
 document.body.append(formForLastTask,ulLastTask);
 
 document.forms.comments.onsubmit = e => e.preventDefault();
+
 
 inputForLastTask.onkeypress = (e) => {
     if(e.key === "Enter") {
         let titleObj = {title: inputForLastTask.value};
         let liLastTask = document.createElement("li");
-        liLastTask.innerText = titleObj.title;
-        ulLastTask.appendChild(liLastTask);
+        let btnHide = document.createElement("button");
+        let btnOpen = document.createElement("button");
+        btnHide.innerText = "hide";
+        btnOpen.innerText = "open";
+        btnOpen.style.display = "none";
+        liLastTask.innerHTML = titleObj.title;
+
+        ulLastTask.append(liLastTask, btnOpen, btnHide);
+
+        btnHide.onclick = () => {
+            liLastTask.innerText = "";
+            btnHide.style.display = "none";
+            btnOpen.style.display = "inline";
+                btnOpen.onclick = () => {
+                    liLastTask.innerText = titleObj.title;
+                    btnOpen.style.display = "none";
+                    btnHide.style.display = "inline";
+                }
+        }
     }
 }
 
