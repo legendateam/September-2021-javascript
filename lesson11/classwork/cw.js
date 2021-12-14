@@ -28,22 +28,18 @@ users.forEach((value, index) => {
     for (const k in value) {
         div.innerText += " " + value[k] + " ";
     }
+    btn.onclick = () => {
+        favorites.push(div.innerText);
+        localStorage.setItem("favorites" , JSON.stringify(favorites));
+    }
     div.appendChild(btn);
     document.body.appendChild(div);
 })
     let divElements = document.getElementsByTagName("div");
     let btnElements = document.getElementsByTagName("button");
 
-  for(const div of divElements) {
-        for(const btn of btnElements) {
-            btn.onclick = () => {
-                favorites.push(div.innerText);
-                localStorage.setItem("favorites", JSON.stringify(favorites));
-                let aadd = localStorage.getItem("favorites");
-                console.log(JSON.parse(aadd));
-            }
-        }
-    }
+
+
 
 
 
