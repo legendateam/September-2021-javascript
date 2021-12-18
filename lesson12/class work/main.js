@@ -18,10 +18,18 @@ fetch("https://jsonplaceholder.typicode.com/posts")
             btn.onclick = () => {
                 let commentsDiv = document.createElement("div");
                 if(div.children.length === 1) {
-                    commentsDiv.innerText = `${post.body}`;
+                    fetch("https://jsonplaceholder.typicode.com/comments")
+                        .then(responseComments => responseComments.json())
+                        .then(comments => {
+                            comments.forEach(comment => {
+                                if(comment.id === post.id)
+                                commentsDiv.innerText = `${comment.body}`;
+                                div.appendChild(commentsDiv);
+                            })
+                        })
                     div.appendChild(commentsDiv);
                 } else {
-                   let child = div.getElementsByTagName("div")[0];
+                    let child = div.getElementsByTagName("div")[0];
                     div.removeChild(child)
                 }
             }
