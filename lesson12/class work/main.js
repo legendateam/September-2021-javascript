@@ -4,34 +4,42 @@
 //     зробити кнопку до кожного поста. при кліку на яку виводяться в окремий блок всі коментарі поточного поста
 
 
-fetch("https://jsonplaceholder.typicode.com/posts")
-    .then(response => response.json())
-    .then(value => {
-        value.forEach(post => {
-            let div = document.createElement("div");
-            let btn = document.createElement("button");
-            btn.innerText = "comments post";
-            div.innerText = `${post.id} ${post.title} `;
-            div.appendChild(btn);
-            document.body.appendChild(div);
+let divWrap = document.createElement("div");
+divWrap.setAttribute("id", "main");
+document.body.appendChild(divWrap);
 
-            btn.onclick = () => {
-                let commentsDiv = document.createElement("div");
-                if(div.children.length === 1) {
+
+fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(responsePosts => responsePosts.json())
+    .then(posts => {
+        posts.forEach(post => {
+            let postDiv = document.createElement("div");
+            postDiv.classList.add("post");
+            let postBtn = document.createElement("button");
+            postBtn.innerText = "show comments";
+            postDiv.innerHTML = `<hr> ${post.id}. ${post.title} <br>${post.body} `
+            postDiv.appendChild(postBtn);
+            divWrap.appendChild(postDiv);
+
+            postBtn.onclick = () => {
+                if(postDiv.children.length < 4) {
                     fetch("https://jsonplaceholder.typicode.com/comments")
                         .then(responseComments => responseComments.json())
                         .then(comments => {
                             comments.forEach(comment => {
-                                if(comment.id === post.id)
-                                commentsDiv.innerText = `${comment.body}`;
-                                div.appendChild(commentsDiv);
+                                if(comment.postId === post.id) {
+                                    let commentDiv = document.createElement("div");
+                                    commentDiv.classList.add("comment");
+                                    commentDiv.innerHTML = `<p style="background-color: cadetblue">${comment.name}</p> <p style="background-color: beige">${comment.body}</p>`;
+                                    postDiv.appendChild(commentDiv);
+                                }
                             })
                         })
-                    div.appendChild(commentsDiv);
                 } else {
-                    let child = div.getElementsByTagName("div")[0];
-                    div.removeChild(child)
+                    let commentsElements = document.getElementsByClassName("comment");
+                        postDiv.removeChild(commentsElements[0]);
                 }
             }
         })
     })
+
