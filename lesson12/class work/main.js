@@ -26,17 +26,20 @@ fetch("https://jsonplaceholder.typicode.com/posts")
                     fetch("https://jsonplaceholder.typicode.com/comments")
                         .then(responseComments => responseComments.json())
                         .then(comments => {
+                            let commentsDiv = document.createElement("div");
+                            commentsDiv.classList.add("comment-main")
+                            postDiv.appendChild(commentsDiv);
                             comments.forEach(comment => {
                                 if(comment.postId === post.id) {
                                     let commentDiv = document.createElement("div");
                                     commentDiv.classList.add("comment");
                                     commentDiv.innerHTML = `<p style="background-color: cadetblue">${comment.name}</p> <p style="background-color: beige">${comment.body}</p>`;
-                                    postDiv.appendChild(commentDiv);
+                                    commentsDiv.appendChild(commentDiv);
                                 }
                             })
                         })
                 } else {
-                    let commentsElements = document.getElementsByClassName("comment");
+                    let commentsElements = document.getElementsByClassName("comment-main");
                         postDiv.removeChild(commentsElements[0]);
                 }
             }
