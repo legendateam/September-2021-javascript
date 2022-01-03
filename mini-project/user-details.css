@@ -1,0 +1,38 @@
+:root {
+    --display-flex: flex;
+}
+
+.box-btn {
+    display: var(--display-flex);
+    justify-content: center;
+}
+
+.btn-show-post {
+    width: 90%;
+    margin-top: 10px;
+}
+.post {
+    display: var(--display-flex);
+    flex-direction: column;
+    row-gap: 5px;
+    width: 250px;
+    background-color: rosybrown;
+    justify-content: space-between;
+}
+.posts {
+    margin: 25px 0 25px 0;
+    display: var(--display-flex);
+    row-gap: 35px;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+}
+.element {
+    background-color: antiquewhite;
+}
